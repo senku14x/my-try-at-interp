@@ -10,6 +10,8 @@ I built the multi-label annotation, calibration by manually annotating and check
 
 This is an active research project. The results support a robust, causally active opponent-modeling-associated direction in the residual stream, but I do not claim this direction is a pure semantic feature or that steering improves strategic reasoning. The main finding is that the direction behaves non-atomically: positive steering increases opponent-modeling-labeled reasoning, while projection-out ablation paradoxically also increases opponent-modeling-labeled segments. I am still working on human evaluation of the steered outputs and cross-architecture replication.
 
+*UPDATE* : I kinda works on r1 llama 8b as well the readme will be duly updated by tomorrow :D 
+
 This README should be read as a snapshot of an active research project rather than a finalized paper artifact; additional robustness checks and component-level analyses are still being added.
 
 ## What I do not claim
