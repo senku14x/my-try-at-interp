@@ -369,10 +369,8 @@ annotation/
   annotation_v2.py             # annotation prompt + core logic
   annotate_chains.py           # chain-mode annotation runner
   segment_chains.py            # paragraph segmenter
-  sample_gold_segments.py      # stratified gold sampler
-  evaluate_gold.py             # F1 evaluator
 
-scripts/
+src/
   phase2_geometry.py           # activation extraction + DoM + robustness suite
   phase2_5_probe_svd.py        # probe vs DoM, SVD depth, co-occurrence
   phase2_5_extended.py         # multi-layer probes, regularization sweep, variance
