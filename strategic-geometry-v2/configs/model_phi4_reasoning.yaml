@@ -1,0 +1,13 @@
+# Microsoft Phi-4-reasoning (~14B) — third family: distinct vendor + NATIVE reasoning recipe
+# (not an R1-distill), size-matched to Qwen-14B so family/recipe is isolated at fixed scale.
+model_name: microsoft/Phi-4-reasoning        # alt: microsoft/Phi-4-reasoning-plus
+model_short: phi4_reasoning
+# NOTE: confirm from model.config at load (code reads num_hidden_layers/hidden_size at runtime).
+n_layers: 40
+hidden_dim: 5120
+headline_layer: 20            # mid-depth; re-select from the layer-sweep, not assumed
+max_new_tokens: 6144          # reasoning model -> long chains; set from measured length dist
+
+# Phi-4-reasoning's think-region delimiters differ from R1's <think>/</think>.
+# Verify the exact format from sample generations and set a model-specific parser (segment.py).
+think_format: verify          # do NOT assume <think></think>; confirm before extraction

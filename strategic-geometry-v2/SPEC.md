@@ -16,9 +16,13 @@ artifacts** (chains, segments, annotations, activations). Dedicated GPU(s) avail
 spend is cost-sensitive but the decisive Stage-1 needs **zero new annotation**.
 
 **Decisions locked:** standalone GitHub repo; **three source-model families** —
-DeepSeek-R1-Distill-Qwen-14B + DeepSeek-R1-Distill-Llama-8B + one newer open-weight reasoning model
-from a distinct family (confirm at implementation by availability + VRAM; pick the most
-architecturally distinct). Geometry on all three (cheap); interventions Qwen-first.
+DeepSeek-R1-Distill-Qwen-14B (primary), DeepSeek-R1-Distill-Llama-8B (second family), and
+**Phi-4-reasoning ~14B** (Microsoft; distinct vendor + *native* reasoning recipe, not an
+R1-distill — breaks the recipe confound; size-matched to Qwen-14B so family/recipe is isolated at
+fixed scale). Plus Qwen2.5-0.5B-Instruct for CI only (not evidence). Geometry on all three (cheap);
+interventions Qwen-first. Note: Phi-4-reasoning needs its own think-region parser (its delimiters
+differ from R1's `<think>`/`</think>`) and its own headline layer (from the layer-sweep, not
+assumed); annotation quality on its text is unmeasured (same caveat as Llama).
 
 ---
 
